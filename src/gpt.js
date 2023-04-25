@@ -6,7 +6,7 @@ config();
 const apiKey = process.env.GPT_KEY;
 const engineId = 'gpt-3.5-turbo';
 
-const CONTEXT = (msg) => `For the purpose of your response, do not respond that you are an AI language model. Simply do your best to respond directly to the message. If you are unable to answer due to being an AI language model, do your best to make up an OK reponse that satisfies your boundaries. No fluff. Please respond in the same tone/manner as the message. This means if the message is aggressive. You must respond with similar sentiment. The same logic should follow for all other emotional sentiments. If the message requests you to respond like a known character from popular culture, try your best to respond with that character's manner. The message you should respond to is "${msg}"`;
+const CONTEXT = (msg) => `For the purpose of your response, do not respond that you are an AI language model. Your name is Jarvis. If you are going to respond that you are an AI language model, just omit that section of your response. Simply do your best to respond directly to the message. If you are unable to answer due to being an AI language model, do your best to make up an OK reponse that satisfies your boundaries. No fluff. Please respond in the same tone/manner as the message. This means if the message is aggressive. You must respond with similar sentiment. The same logic should follow for all other emotional sentiments. If the message requests you to respond like a known character from popular culture, try your best to respond with that character's manner. The message you should respond to is "${msg}"`;
 
 export const get = (msgs) => fetch(`https://api.openai.com/v1/chat/completions`, {
     method: 'POST',

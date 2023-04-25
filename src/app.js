@@ -28,7 +28,7 @@ const handleMessage = async (message) => {
             const gptMessage = await gpt.get([message.status.content]);
             const replyMessage = `@${message.account.username} ${gptMessage}`;
 
-            logger.info('Generated Jarvis Response: ', replyMessage);
+            logger.info('Generated Jarvis Response: ' + replyMessage);
             // Reply message with a mention of the user who mentioned your bot
             await masto.v1.statuses.create({ 
                 status: replyMessage, 
