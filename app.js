@@ -1,6 +1,7 @@
 import { login } from 'masto';
 import config from './config.js';
 import logger from './logger.js';
+import * as gpt from './gpt.js';
 
 config();
 
@@ -17,7 +18,6 @@ const handleMessage = async (message) => {
         //logger.info('Processing message: ', message.content);
         // Get the status of the user who mentioned your bot
 
-        console.log(message);
         // Get the user who mentioned your bot
         const isMentioned = message
             .status
@@ -25,8 +25,10 @@ const handleMessage = async (message) => {
 
         if (isMentioned) {
             // Construct your reply message
-            const replyMessage = `@${message.account.username} Thanks for mentioning me!`;
+            const gptMessage = await gpt.get([message.status.content]);
+            const replyMessage = `@${message.account.username} ${gptMessage}`;
 
+            logger.info('Generated Jarvis Response: ', replyMessage);
             // Reply message with a mention of the user who mentioned your bot
             await masto.v1.statuses.create({ 
                 status: replyMessage, 

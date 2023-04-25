@@ -2,11 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   dotenv: ^16.0.3
+  lodash: ^4.17.21
   masto: ^5.11.2
   winston: ^3.8.2
 
 dependencies:
   dotenv: 16.0.3
+  lodash: 4.17.21
   masto: 5.11.2
   winston: 3.8.2
 
@@ -266,6 +268,10 @@ packages:
 
   /kuler/2.0.0:
     resolution: {integrity: sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==}
+    dev: false
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
 
   /logform/2.5.1:
