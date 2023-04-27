@@ -1,4 +1,5 @@
 import { login } from 'masto';
+import logger from './logger.js';
 import config from './config.js';
 
 config();

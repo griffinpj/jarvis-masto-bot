@@ -7,15 +7,12 @@ import utils from './utils.js';
 import mastodon from './masto.js';
 
 
-const stream = await mastodon.stream.user({
-    include_types: ['mention']
-});
+const stream = await mastodon.stream.user();
 
 logger.info('Jarvis is listening at @jarvis@social.griff.la ...');
 stream
     .on('notification', async (message) => {
         logger.info('Processing Message');
-        console.log(message);
         if (message.type === 'mention' && message.account && message.status) {
             // Get the user who mentioned your bot
             const isMentioned = message
@@ -99,6 +96,7 @@ stream
                 console.log(message);
             }
         }
+        return;
     })
     .on('error', (error) => {
         logger.error(error);

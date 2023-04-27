@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "jarvis-masto-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "license": "AGPL-version-3.0",
   "private": false,
@@ -26,8 +26,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "docker-build": "docker buildx build --platform linux/amd64 -t jarvis-masto-bot:latest .; docker tag jarvis-masto-bot:latest cougargriff/jarvis-masto-bot:latest",
-    "deploy": "docker push cougargriff/jarvis-masto-bot:latest",
+    "docker-build": "docker buildx build --platform linux/amd64 -t jarvis-masto-bot:latest . && docker tag jarvis-masto-bot:latest cougargriff/jarvis-masto-bot:latest",
+    "deploy": "npm run docker-build && docker push cougargriff/jarvis-masto-bot:latest",
     "models": "node src/gpt-models.js",
     "test": ""
   },
