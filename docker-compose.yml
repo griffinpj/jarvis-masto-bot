@@ -5,8 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      MASTODON_URL: https://social.griff.la
+      MASTODON_URL: 
       MASTODON_TOKEN: 
+      REDIS_PATH:
       GPT_KEY: 
     ports:
       - 3000:3000

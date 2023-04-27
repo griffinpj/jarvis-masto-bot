@@ -28,12 +28,14 @@
     "dev": "nodemon src/app.js",
     "docker-build": "docker buildx build --platform linux/amd64 -t jarvis-masto-bot:latest .; docker tag jarvis-masto-bot:latest cougargriff/jarvis-masto-bot:latest",
     "deploy": "docker push cougargriff/jarvis-masto-bot:latest",
+    "models": "node src/gpt-models.js",
     "test": ""
   },
   "dependencies": {
     "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
     "masto": "^5.11.2",
+    "redis": "^4.6.5",
     "winston": "^3.8.2"
   },
   "devDependencies": {
