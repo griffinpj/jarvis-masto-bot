@@ -75,6 +75,7 @@ stream
                     logger.error(e);
                 }
                 await redis.set(redisKey, savedMsgs);
+                logger.info('Saved @: ' + redisKey);
 
                 if (gptMessage) {
                     logger.info('Saved msgs for ' + redisKey);
